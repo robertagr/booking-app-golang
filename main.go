@@ -32,7 +32,7 @@ func main() {
 		var email string
 		var userTickets uint
 		
-		// ask user for their name
+		// ask for user input 
 		fmt.Println("Enter your first name:")
 		fmt.Scan(&firstName)
 		
@@ -45,8 +45,14 @@ func main() {
 		fmt.Println("Enter number of tickets:")
 		fmt.Scan(&userTickets)
 		
+		isValidName := len(firstName) >= 2 && len(lastName) >=2
+        isValidEmail := strings.Contains(email, "@")  //if email contains @
+		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
 
-		if userTickets < remainingTickets{
+        // isValidCity := city == "Singapore" || city == "London"
+
+
+		if  {
 			remainingTickets = remainingTickets - userTickets
 			//SLICE
 			bookings = append(bookings, firstName + " " + lastName)
