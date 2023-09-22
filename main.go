@@ -46,12 +46,8 @@ func main() {
 		fmt.Scan(&userTickets)
 		
 
-		if userTickets <= remainingTickets{
+		if userTickets < remainingTickets{
 			remainingTickets = remainingTickets - userTickets
-		
-			//ARRAY
-			// bookings[0] = firstName + " " + lastName  
-		
 			//SLICE
 			bookings = append(bookings, firstName + " " + lastName)
 		
@@ -71,7 +67,9 @@ func main() {
 				fmt.Println("Our conference is booked out. Come back next year.")
 				break
 			}
-			
+
+		} else if userTickets == remainingTickets {
+			// do something else
 		} else {
 			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remainingTickets, userTickets)
 			continue
