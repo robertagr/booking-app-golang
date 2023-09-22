@@ -52,7 +52,7 @@ func main() {
         // isValidCity := city == "Singapore" || city == "London"
 
 
-		if  {
+		if isValidEmail && isValidName && isValidTicketNumber {
 			remainingTickets = remainingTickets - userTickets
 			//SLICE
 			bookings = append(bookings, firstName + " " + lastName)
@@ -74,11 +74,16 @@ func main() {
 				break
 			}
 
-		} else if userTickets == remainingTickets {
-			// do something else
 		} else {
-			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remainingTickets, userTickets)
-			continue
+			if !isValidName {
+				fmt.Println("first name of last name you entered is too short")
+			} 
+			if !isValidName {
+				fmt.Println("email address you entered does not contain @ sign")
+			}
+			if !isValidTicketNumber {
+				fmt.Println("number of tickets you entered is invalid")
+			}
 		}
 	}
 	
